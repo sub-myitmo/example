@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/AsyncFileReader.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/AsyncFileReaderHandler.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/AsyncFileWriter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/withSocket/AsyncClient.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/withSocket/AsyncClientHandler.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/withSocket/AsyncServer.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
