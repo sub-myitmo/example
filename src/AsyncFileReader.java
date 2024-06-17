@@ -7,31 +7,31 @@ import java.util.concurrent.Future;
 public class AsyncFileReader {
     public static void main(String[] args) {
         try {
-            // Указываем путь к файлу и параметр канала (на чтение)
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ)
             AsynchronousFileChannel fileChannel = AsynchronousFileChannel.open(Paths.get("file.txt"), StandardOpenOption.READ);
 
             ByteBuffer buffer = ByteBuffer.allocate(4096);
             Future<Integer> result = fileChannel.read(buffer, 0);
 
-            // Делаем что-то другое пока читаются данные из файла (полезная программа)
+            // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
             int k = 0;
             for (int i=0; i < 1000; i++){
                 k++;
             }
 
-            // Ждем завершения чтения
+            // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             Integer bytesRead = result.get();
-            System.out.println("Прочитано байтов: " + bytesRead);
+            System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " + bytesRead);
 
-            // переворачиваем буфер, чтобы его прочитать
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             buffer.flip();
-            // цикл, пока в буфере есть элементы
+            // пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             while (buffer.hasRemaining()) {
                 System.out.print((char) buffer.get());
             }
             fileChannel.close();
         } catch (Exception e) {
-            System.out.println("Внезапная ошибка!");
+            System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!");
         }
     }
 }
